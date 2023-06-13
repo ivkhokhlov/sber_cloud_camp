@@ -26,3 +26,17 @@ def test_delete_post(placeholder_api, create_default_post):
     status_code, get_deleted_data = placeholder_api.get_post(post_id)
     assert status_code == 404
     assert len(delete_data) == 0
+
+
+def test_create_post(placeholder_api):
+    status_code, create_post_data = placeholder_api.create_post(user_id=USER_ID,
+                                                                title=TITLE,
+                                                                body=BODY)
+    assert status_code == 201
+    assert create_post_data.get('userId') == USER_ID
+    assert create_post_data.get('title') == TITLE
+    assert create_post_data.get('body') == BODY
+
+    status_code, get_post_data = placeholder_api.get_post(create_post_data.get('userId'))
+    assert status_code == 200
+    assert create_post_data == get_post_data
