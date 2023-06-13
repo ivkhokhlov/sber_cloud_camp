@@ -45,3 +45,19 @@ poetry run -m pytest --host http://localhost:3000
 ```bash
 poetry run -m pytest --host https://jsonplaceholder.typicode.com
 ```
+## Использование с Docker
+### Сборка образа
+Перейти в директорию с проектом и собрать образ
+```bash
+cd /path/to/prjct
+docker build -t pytest_cloud .
+```
+### Запуск тестов
+для локального сервера
+ ```bash
+docker run --rm pytest_cloud
+```
+для запуска с произвольным адресом сервера использовать `--host`
+```bash
+docker run --rm test_poetry --host https://jsonplaceholder.typicode.com
+```
