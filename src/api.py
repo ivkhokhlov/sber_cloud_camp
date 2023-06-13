@@ -15,8 +15,13 @@ class PlaceholderAPI():
         response = self.session.get(f"{self.host}/posts/{post_id}")
         return response.status_code, response.json()
 
-    def create_post(self, data):
-        response = self.session.post(f"{self.host}/posts", data=data)
+    def create_post(self, user_id, title, body):
+        data = {
+            "userId": user_id,
+            "title": title,
+            "body": body
+        }
+        response = self.session.post(f"{self.host}/posts", json=data)
         return response.status_code, response.json()
 
     def delete_post(self, post_id):
