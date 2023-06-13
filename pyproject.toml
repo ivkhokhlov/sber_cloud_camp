@@ -10,7 +10,6 @@ packages = [{include = "sber_cloud_camp"}]
 python = "^3.11"
 pytest = "^7.3.2"
 requests = "^2.31.0"
-pytest-timeout = "^2.1.0"
 
 
 [build-system]
