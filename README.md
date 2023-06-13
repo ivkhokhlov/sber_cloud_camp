@@ -6,7 +6,7 @@ https://github.com/QACloudCamp/test-assignment
 
 ## Зависимости
 Для запуска этого проекта необходимо иметь установленные:
-	- Python 3.10+ (рекомендуется 3.10 или новее)
+	- Python 3.11 (не тестировалось на других версиях)
 	- Poetry - инструмент для управления зависимостями Python
 
 ## Установка и настройка
@@ -19,7 +19,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 Клонируйте репозиторий с помощью git:
 ```bash
 git clone https://github.com/ivkhokhlov/sber_cloud_camp.git
-cd your-repo-name
+cd sber_cloud_camp
 ```
 ### Установка зависимостей проекта
 Используйте следующую команду для установки зависимостей проекта:
