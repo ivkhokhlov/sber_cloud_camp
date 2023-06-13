@@ -1,13 +1,17 @@
 import pytest
 
-from config import HOST
 from src.api import PlaceholderAPI
 from test_data.default_data import USER_ID, BODY, TITLE
 
 
+def pytest_addoption(parser):
+    parser.addoption('--host', action='store', default='http://localhost:3000', help='host')
+
+
 @pytest.fixture(scope='session')
-def placeholder_api():
-    return PlaceholderAPI(host=HOST)
+def placeholder_api(request):
+    host = request.config.getoption('--host')
+    return PlaceholderAPI(host=host)
 
 
 @pytest.fixture(scope='function')
