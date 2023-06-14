@@ -59,5 +59,5 @@ docker run --rm pytest_cloud
 ```
 для запуска с произвольным адресом сервера использовать `--host`
 ```bash
-docker run --rm test_poetry --host https://jsonplaceholder.typicode.com
+docker run --rm pytest_cloud --host https://jsonplaceholder.typicode.com
 ```
